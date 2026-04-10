@@ -16,5 +16,6 @@ namespace Line.Model.MessageAPI.Content
         public class Response
         {
             public string status { get; set; }
+        }
     }
 }

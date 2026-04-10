@@ -29,8 +29,8 @@ namespace Line.Service
                 notificationDisabled = notificationDisabled,
                 to = to
             }; 
-            var response = await Send(body, BodyType.push);
-            Console.WriteLine($"{BodyType.push} Response:  {await response.Content.ReadAsStringAsync()}");
+            var response = await Send(body, BodyType.Push);
+            Console.WriteLine($"{BodyType.Push} Response:  {await response.Content.ReadAsStringAsync()}");
         }
 
         public async void Multicast(List<Message> messages, List<string> userList,  bool notificationDisabled = false)
@@ -42,8 +42,8 @@ namespace Line.Service
                 notificationDisabled = notificationDisabled,
                 to = userList
             };
-            var response = await Send(body, BodyType.multicast);
-            Console.WriteLine($"{BodyType.multicast} Response:  {await response.Content.ReadAsStringAsync()}");
+            var response = await Send(body, BodyType.Multicast);
+            Console.WriteLine($"{BodyType.Multicast} Response:  {await response.Content.ReadAsStringAsync()}");
         }
 
         public async void Broadcast(List<Message> messages, bool notificationDisabled = false)
@@ -54,8 +54,8 @@ namespace Line.Service
                 notificationDisabled = notificationDisabled,
             }; 
 
-            var response = await Send(body, BodyType.broadcast);
-            Console.WriteLine($"{BodyType.broadcast} Response:  {await response.Content.ReadAsStringAsync()}");
+            var response = await Send(body, BodyType.Broadcast);
+            Console.WriteLine($"{BodyType.Broadcast} Response:  {await response.Content.ReadAsStringAsync()}");
         }
 
         private async Task<HttpResponseMessage> Send(Body body, string path) 

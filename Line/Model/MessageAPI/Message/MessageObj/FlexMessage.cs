@@ -10,7 +10,7 @@ namespace Line.Model.MessageAPI.Message.MessageObj
     {
         public override string type => "flex";
         public string altText { get; set; }
-        // public contents {
+        public Container contents { get; set; }
 
 
         public abstract class Container

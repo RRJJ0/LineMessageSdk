@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace Line.Model.Send.Body
@@ -16,7 +17,11 @@ namespace Line.Model.Send.Body
 
         public override string ToString()
         {
-            return JsonConvert.SerializeObject(this);
+            var settings = new JsonSerializerSettings
+            {
+                NullValueHandling = NullValueHandling.Ignore
+            };
+            return JsonConvert.SerializeObject(this, settings);
         }
     }
 
